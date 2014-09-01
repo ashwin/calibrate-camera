@@ -1,0 +1,21 @@
+project(calibrate-camera)
+cmake_minimum_required(VERSION 2.8)
+set(
+    CMAKE_RUNTIME_OUTPUT_DIRECTORY
+    ${CMAKE_HOME_DIRECTORY}/bin
+    )
+add_definitions(
+    -Wfatal-errors
+    )
+add_executable(
+    ${PROJECT_NAME}
+    src/camera_calibration.cpp
+    )
+target_link_libraries(
+    ${PROJECT_NAME}
+    -lopencv_calib3d
+    -lopencv_core
+    -lopencv_features2d
+    -lopencv_highgui
+    -lopencv_imgproc
+    )
